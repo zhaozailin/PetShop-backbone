@@ -1,0 +1,39 @@
+body {
+    background: rgba(16, 19, 7, 0.68);
+}
+
+.app-container {
+    margin: 30px auto;
+    width: 600px;
+    min-height: 650px;
+    background: #fff;
+}
+
+.app-container h3 {
+    text-align: center;
+    color: #808080;
+    line-height: 40px;
+}
+
+.app-container div[name=tools] {
+    text-align: center;
+}
+
+.app-container div[name=list] {
+    width: 100%;
+}
+
+.app-table {
+    width: 90%;
+    margin: 30px auto;
+    border-collapse: collapse;
+    text-align: center;
+    color: #808080;
+    border-left: 1px solid darkgrey;
+    border-bottom: 1px solid darkgrey;
+}
+
+.app-table td, .app-table th {
+    border-top: 1px solid darkgrey;
+    border-right: 1px solid darkgrey;
+}

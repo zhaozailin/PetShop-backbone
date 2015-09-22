@@ -1,0 +1,19 @@
+<table class="app-table">
+  <tr>
+    <th>种类</th>
+    <th>名字</th>
+    <th>年龄</th>
+    <th>操作</th>
+  </tr>
+  {{#data}}
+  <tr>
+    <td>{{kind}}</td>
+    <td>{{name}}</td>
+    <td>{{age}}</td>
+    <td>
+      <a href="#" name="modify" cid="{{cid}}">编辑</a>
+      <a href="#" name="remove" cid="{{cid}}">删除</a>
+    </td>
+  </tr>
+  {{/data}}
+</table>
