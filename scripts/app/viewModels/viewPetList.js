@@ -22,6 +22,10 @@ var ViewPetList = Backbone.View.extend({
         });
     },
 
+    /**
+     * 转为viewModels
+     * @returns {Array|*}
+     */
     switchViewModels : function() {
         return _.map(this.collection.models, function(model) {
             var viewModel = model.toJSON();
@@ -38,11 +42,20 @@ var ViewPetList = Backbone.View.extend({
         });
     },
 
+    /**
+     * 修改
+     * @param e
+     */
     modify : function(e) {
         var cid = $(e.target).attr("cid");
         console.log(this.collection.get(cid));
+        appRouter.navigate("pet/modify", {trigger : true});
     },
 
+    /**
+     * 删除
+     * @param e
+     */
     remove : function(e) {
         var cid = $(e.target).attr("cid");
         this.collection.remove(this.collection.get(cid));

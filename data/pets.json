@@ -1,6 +1,6 @@
 [
-  {"id" : 1, "kind" : 1, "name" : "黑猫", "age" : 1},
-  {"id" : 2, "kind" : 1, "name" : "白猫", "age" : 2},
-  {"id" : 3, "kind" : 2, "name" : "黑狗", "age" : 3},
-  {"id" : 4, "kind" : 2, "name" : "白狗", "age" : 4}
+  {"id" : 1, "kind" : 1, "name" : "小黄", "color" : "黄色", "age" : 1},
+  {"id" : 2, "kind" : 1, "name" : "小白", "color" : "白色", "age" : 2},
+  {"id" : 3, "kind" : 2, "name" : "小黑", "color" : "黑色", "age" : 3},
+  {"id" : 4, "kind" : 2, "name" : "小红", "color" : "红色", "age" : 4}
 ]

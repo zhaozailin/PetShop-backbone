@@ -8,6 +8,7 @@ var Pet = Backbone.Model.extend({
         kind : 0,
 
         name : "",
+        color : "",
         age : 0
     },
 
@@ -15,7 +16,10 @@ var Pet = Backbone.Model.extend({
         this.listenTo(this, "remove", this.remove);
     },
 
+    /**
+     * 删除
+     */
     remove : function() {
-        alert(this.get("name") + "已经被删除");
+        console.log(this.get("name") + "已经被删除");
     }
 });
