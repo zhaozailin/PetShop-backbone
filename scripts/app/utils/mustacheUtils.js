@@ -13,7 +13,18 @@ Mustache.templateFromUrl = function(url, data, callback) {
         url : url,
         method : "GET",
         success : function(result) {
-            callback(Mustache.render(result, {data : data}));
+            callback(Mustache.render(result, data));
         }
     });
 };
+
+Mustache.simpleTemplateFromUrl = function(url, callback) {
+    $.ajax({
+        url : url,
+        method : "GET",
+        success : function(result) {
+            callback(result);
+        }
+    });
+};
+

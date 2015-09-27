@@ -16,48 +16,16 @@ var ViewPetList = Backbone.View.extend({
 
     render : function() {
         var obj = this;
-        var viewModel = this.switchViewModels();
-        Mustache.templateFromUrl("views/petList.html", viewModel, function(result) {
+        Mustache.simpleTemplateFromUrl("views/petList.html", function(result) {
             obj.$el.html(result);
+            obj.renderInner();
         });
     },
 
-    /**
-     * 转为viewModels
-     * @returns {Array|*}
-     */
-    switchViewModels : function() {
-        return _.map(this.collection.models, function(model) {
-            var viewModel = model.toJSON();
-
-            if (viewModel.kind === 1) {
-                viewModel.kind = "猫科";
-            }
-            else if (viewModel.kind === 2) {
-                viewModel.kind = "狗科";
-            }
-
-            viewModel.cid = model.cid;
-            return viewModel;
+    renderInner : function() {
+        var obj = this;
+        _.map(this.collection.models, function(model) {
+            obj.$("#tbody").append(new ViewPet({model : model}).el);
         });
-    },
-
-    /**
-     * 修改
-     * @param e
-     */
-    modify : function(e) {
-        var cid = $(e.target).attr("cid");
-        console.log(this.collection.get(cid));
-        appRouter.navigate("pet/modify", {trigger : true});
-    },
-
-    /**
-     * 删除
-     * @param e
-     */
-    remove : function(e) {
-        var cid = $(e.target).attr("cid");
-        this.collection.remove(this.collection.get(cid));
     }
 });
