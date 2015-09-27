@@ -8,10 +8,13 @@
 <body>
   <div class="app-container">
     <h3>宠物商店</h3>
-    <div name="tools">
-      <input type="text"><button>搜索</button>
+    <div name="query" id="queryArea">
+      <div name="tools">
+        <input type="text"><button>搜索</button>
+      </div>
+      <div name="list" id="petList"></div>
     </div>
-    <div name="list" id="petList"></div>
+    <div name="edit" id="editArea"></div>
   </div>
 
   <script src="scripts/libs/jquery.js"></script>
@@ -25,6 +28,7 @@
   <script src="scripts/app/collections/pets.js"></script>
   <script src="scripts/app/viewModels/viewPet.js"></script>
   <script src="scripts/app/viewModels/viewPetList.js"></script>
+  <script src="scripts/app/viewModels/viewPetModal.js"></script>
   <script src="scripts/app/app.js"></script>
 </body>
 </html>

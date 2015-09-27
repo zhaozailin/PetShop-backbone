@@ -1,12 +1,12 @@
 /**
  * Created by zhaozl on 2015/9/22.
  */
-var ViewPet = Backbone.View.extend({
-    tagName : "tr",
+var ViewPetModal = Backbone.View.extend({
+    el : "#editArea",
 
     events : {
-        "click a[name=modify]" : "modify",
-        "click a[name=remove]" : "remove"
+        "click button[name=close]" : "close"
+        //"click a[name=remove]" : "remove"
     },
 
     initialize : function() {
@@ -16,7 +16,8 @@ var ViewPet = Backbone.View.extend({
     render : function() {
         var obj = this;
         var viewModel = this.switchViewModel();
-        Mustache.templateFromUrl("views/pet.html", viewModel, function(result) {
+        Mustache.templateFromUrl("views/petModal.html", viewModel, function(result) {
+            console.log(result);
             obj.$el.html(result);
         });
     },
@@ -40,19 +41,19 @@ var ViewPet = Backbone.View.extend({
     },
 
     /**
-     * 修改
+     * 关闭
      * @param e
      */
-    modify : function() {
-        appRouter.navigate("pet/modify/" + this.model.cid, {trigger : true});
-    },
+    close : function() {
+        appRouter.navigate("", {trigger : true});
+    }
 
     /**
      * 删除
      * @param e
      */
-    remove : function(e) {
-        var cid = $(e.target).attr("cid");
-        this.collection.remove(this.collection.get(cid));
-    }
+    //remove : function(e) {
+    //    var cid = $(e.target).attr("cid");
+    //    this.collection.remove(this.collection.get(cid));
+    //}
 });

@@ -1,0 +1,32 @@
+<table class="app-edit-table">
+  <tr>
+    <td>类别</td>
+    <td name="left">
+      <select name="kind">
+        <option value="1">猫科</option>
+        <option value="2">狗科</option>
+      </select>
+    </td>
+  </tr>
+  <tr>
+    <td>名字</td>
+    <td>
+      <input type="text" name="name" value="{{name}}">
+    </td>
+  </tr>
+  <tr>
+    <td>颜色</td>
+    <td>
+      <input type="text" name="color" value="{{color}}">
+    </td>
+  </tr>
+  <tr>
+    <td>年龄</td>
+    <td>
+      <input type="text" name="age" value="{{age}}">
+    </td>
+  </tr>
+</table>
+
+<button href="javascript:void(0)" name="save" cid="{{cid}}">保存</button>
+<button href="javascript:void(0)" name="close" cid="{{cid}}">关闭</button>
